@@ -1,0 +1,104 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 80px 20px 20px; /* Default padding-top */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align content at the top */
+    min-height: 100vh;
+    
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+@media (max-width: 768px) {
+    body {
+        padding: 60px 10px 10px; /* Adjusted padding-top for smaller screens */
+    }
+}
+
+.eligibility-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    margin: 20px auto;
+    position: relative; /* Ensure it stays below the header */
+    top: 80px; /* Push the container down by the header's height */
+
+}
+.eligibility-details-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    margin: 20px auto;
+    position: relative; /* Ensure it stays below the header */
+    top: 80px; /* Push the container down by the header's height */
+
+}
+.login-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    margin: 20px auto;
+    position: relative; /* Ensure it stays below the header */
+    top: 80px; /* Push the container down by the header's height */
+
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 1.5rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input, select, button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+button {
+    background: #00A676;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #00A676;
+}
+
+/* Media Queries for Smaller Screens */
+@media (max-width: 768px) {
+    body {
+        padding: 60px 10px 10px;
+    }
+
+    .eligibility-container {
+        padding: 15px;
+    }
+
+    input, select, button {
+        font-size: 0.9rem;
+    }
+}

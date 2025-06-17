@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Application Successful</title>
+    <style>
+        /* Existing styles */
+        header {
+            background: #00A676;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        header .logo img {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 80px 20px 20px; /* Default padding-top */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align content at the top */
+    min-height: 100vh;
+    
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+@media (max-width: 768px) {
+    body {
+        padding: 60px 10px 10px; /* Adjusted padding-top for smaller screens */
+    }
+}
+
+     
+
+        .bot-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 50%;
+            text-align: center;
+            margin: auto;
+            flex: 1; /* Allow the content to grow and push the footer down */
+        }
+
+        .bot-message {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 20px;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 2px solid #333;
+            animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink-caret {
+            from, to {
+                border-color: transparent;
+            }
+            50% {
+                border-color: #333;
+            }
+        }
+
+        .congratulations {
+            font-size: 1.5rem;
+            color: green;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+
+        
+    </style>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5674057642372045"
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/hww.jpg" alt="Loan Company Logo">
+        </div>
+        <nav>
+            <ul>
+              
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="bot-container">
+        <div class="bot-message" id="bot-message"></div>
+        <div class="congratulations" id="congratulations-message"></div>
+    </div>
+
+
+
+    <script>
+        // Bot message to display
+        const botMessage = "Processing your request...";
+        const successMessage = "CONGRATULATIONS! Your loan application has been successfully received, and your loan will be released in the next 48 hours. Kindly consider repaying your loan in time to increase your next loan limit.";
+
+        // Function to simulate bot typing
+        function typeMessage(element, message, speed, callback) {
+            let i = 0;
+            element.textContent = ""; // Clear the element
+            const typingInterval = setInterval(() => {
+                if (i < message.length) {
+                    element.textContent += message.charAt(i);
+                    i++;
+                } else {
+                    clearInterval(typingInterval);
+                    if (callback) callback();
+                }
+            }, speed);
+        }
+
+        // Display bot message with typing effect
+        const botMessageElement = document.getElementById('bot-message');
+        const congratulationsElement = document.getElementById('congratulations-message');
+
+        typeMessage(botMessageElement, botMessage, 100, () => {
+            // After the bot message is typed, display the congratulations message
+            setTimeout(() => {
+                congratulationsElement.textContent = successMessage;
+            }, 1000); // Delay before showing the congratulations message
+        });
+    </script>
+</body>
+</html>

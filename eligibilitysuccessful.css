@@ -1,0 +1,101 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 80px 20px 20px; /* Default padding-top */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align content at the top */
+    min-height: 120vh;
+    
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+@media (max-width: 768px) {
+    body {
+        padding: 60px 10px 10px; /* Adjusted padding-top for smaller screens */
+    }
+}
+/* Eligibility Page */
+.eligibility-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f5f5f5;
+}
+
+.eligibility-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    margin: 20px auto;
+    position: relative; /* Ensure it stays below the header */
+    top: 80px; /* Push the container down by the header's height */
+
+}
+.servicefee-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    margin: 20px auto;
+    position: relative; /* Ensure it stays below the header */
+    top: 80px; /* Push the container down by the header's height */
+
+}
+/* Heading */
+.eligibility-container h2 {
+    font-size: 1.8rem;
+    color:#00A676;
+    margin-bottom: 15px;
+}
+
+/* Loan Summary */
+.loan-summary {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+/* Loan Details Box */
+.loan-details {
+    background: #e6f7ff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.loan-details h3 {
+    margin-bottom: 10px;
+    color: #0073e6;
+}
+
+/* Account Info */
+.account-info {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+/* Apply Now Button */
+#apply-now-button {
+    background: #00A676;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#apply-now-button:hover {
+    background: #00A676;
+}

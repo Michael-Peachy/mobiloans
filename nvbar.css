@@ -1,0 +1,41 @@
+/* Base styles (mobile-first) */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background:#00A676;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allow header items to wrap on smaller screens */
+}
+
+header .logo img {
+    height: 50px;
+    width: 50px;
+    border-radius: 45%;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap; /* Allow nav items to wrap on smaller screens */
+}
+
+nav ul li {
+    margin: 10px 15px; /* Add vertical spacing for smaller screens */
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}

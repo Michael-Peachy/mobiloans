@@ -1,0 +1,21 @@
+.loan-option {
+    border: 2px solid #ccc;
+    background-color: white;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.loan-option:hover {
+    background-color: #f0f0f0;
+}
+
+.loan-option.selected {
+    border: 2px solid #007bff;
+    background-color: #cce5ff;
+}
+
+.inactive {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

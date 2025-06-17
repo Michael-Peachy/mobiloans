@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles1.css">
+    <style>
+        /* Navigation Bar Styles */
+        header {
+            background: #00A676;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        header .logo img {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            padding: 10px 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Progress Dialog Styles */
+        #loading-spinner {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 18px;
+            z-index: 2000;
+        }
+
+        /* Spinner Animation */
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 5px solid #fff;
+            border-top: 5px solid transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 10px auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+    </style>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5674057642372045"
+    crossorigin="anonymous"></script>
+</head>
+<body class="login-page">
+    <header>
+        <div class="logo">
+            <img src="images/hww.jpg" alt="Loan Company Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="login-form">
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button id="subs" type="submit">Sign In</button>
+            <p id="error-message" style="color: red; display: none;">Invalid email or password.</p>
+        </form>
+        <p>No account yet? <a href="eligibility.html">Create Now</a></p>
+    </div>
+
+    <!-- Progress Dialog -->
+    <div id="loading-spinner">
+        <div class="spinner"></div>
+        <p>Logging in... Please wait</p>
+    </div>
+
+    <script type="module" src="js/login.js"></script>
+
+    <script>
+        document.getElementById("login-form").addEventListener("submit", function(event) {
+            // Show the progress dialog
+            document.getElementById("loading-spinner").style.display = "block";
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,445 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MobiLoans</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+
+    <script defer src="js/installl.js"></script>
+    <script defer src="service-workejr.js"></script>
+    <style>
+        /* Footer Styles */
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        .footer-content {
+            display: flex;
+            flex-direction: column; /* Stack items vertically */
+            align-items: center; /* Center items horizontally */
+            margin-bottom: 20px;
+        }
+
+        .footer-item {
+            display: flex;
+            align-items: center;
+            margin: 15px 0; /* Add vertical spacing between items */
+        }
+
+        .footer-item i {
+            font-size: 24px;
+            margin-right: 10px;
+            color: #00A676;
+        }
+
+        .footer-item div {
+            text-align: left;
+        }
+
+        .footer-item div p {
+            margin: 5px 0;
+            font-size: 0.9rem;
+        }
+
+        /* Social Icons Section */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Space between icons */
+            margin: 20px 0;
+        }
+
+        .social-icons a {
+            color: #fff;
+            font-size: 24px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #00A676; /* Change color on hover */
+        }
+
+        /* Horizontal Line */
+        .separator {
+            width: 80%; /* Adjust the width of the line */
+            height: 1px;
+            background: #555; /* Color of the line */
+            margin: 20px auto; /* Center the line and add spacing */
+        }
+
+        /* Footer Bottom */
+        .footer-bottom {
+            margin-top: 20px;
+            font-size: 0.8rem;
+        }
+
+        /* Borrow Loan Online Section */
+        .borrow-online {
+            background-color: #f9f9f9;
+            padding: 50px 40px;
+            margin-top: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .borrow-online h2 {
+            text-align: center;
+            color: #00A676;
+            font-size: 30px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .borrow-online h3 {
+            color: #333;
+            font-size: 24px;
+            margin-top: 25px;
+            font-weight: bold;
+        }
+
+        .borrow-online p {
+            color: #555;
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .borrow-online ul,
+        .borrow-online ol {
+            padding-left: 25px;
+            margin-bottom: 20px;
+        }
+
+        .borrow-online ul li,
+        .borrow-online ol li {
+            font-size: 18px;
+            color: #444;
+            margin-bottom: 12px;
+        }
+
+        .borrow-online ul li strong {
+            color: #00A676;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .borrow-online {
+                padding: 40px 30px;
+            }
+
+            .borrow-online h2 {
+                font-size: 28px;
+            }
+
+            .borrow-online h3 {
+                font-size: 22px;
+            }
+
+            .borrow-online p,
+            .borrow-online ul li,
+            .borrow-online ol li {
+                font-size: 17px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .borrow-online {
+                padding: 30px 20px;
+            }
+
+            .borrow-online h2 {
+                font-size: 26px;
+            }
+
+            .borrow-online h3 {
+                font-size: 20px;
+            }
+
+            .borrow-online p,
+            .borrow-online ul li,
+            .borrow-online ol li {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .borrow-online {
+                padding: 20px 15px;
+            }
+
+            .borrow-online h2 {
+                font-size: 24px;
+            }
+
+            .borrow-online h3 {
+                font-size: 18px;
+            }
+
+            .borrow-online p,
+            .borrow-online ul li,
+            .borrow-online ol li {
+                font-size: 15px;
+            }
+        }
+/*
+        #install-container {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #0073e6;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #install-button {
+            background-color: #0073e6;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+            display: none; /* Initially hidden *
+        }
+
+        #install-button:hover {
+            background: lightgray;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .install-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            border-radius: 8px;
+            display: none; /* Initially hidden 
+            z-index: 1000;
+        } 
+
+        .install-popup button {
+            background: #0073e6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .install-popup button:hover {
+            background: #005bb5;
+        }
+        */
+    </style>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5674057642372045"
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Install Prompt (Hidden by Default) 
+    <div id="install-notification" class="install-popup">
+        <p>Kindly Install the App to Continue.</p>
+        <button id="install-btn">Install</button>
+    </div>
+
+-->
+
+    <header>
+        <div class="logo">
+            <img src="images/hww.jpg" alt="Loan Company Logo">
+        </div>
+        <nav>
+            <ul>
+               
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Get the Loan You Need in Minutes!</h1>
+            <p>Fast, Easy, and Secure Loans Tailored to Your Needs.</p>
+            <a href="login.html" id="apply-now" class="cta-button">Apply Now</a>
+
+        </div>
+    </section>
+
+    <section class="borrow-steps">
+        <h2>How to Borrow a Loan</h2>
+        <div class="steps-container">
+            <div class="step">
+                <span class="step-number">1</span>
+                <h3>Leave a Request</h3>
+                <p>Fill out our simple online form with your details and loan requirements.</p>
+            </div>
+            <div class="step">
+                <span class="step-number">2</span>
+                <h3>Wait for Decision</h3>
+                <p>Our team will review your application and get back to you within minutes.</p>
+            </div>
+            <div class="step">
+                <span class="step-number">3</span>
+                <h3>Receive Money</h3>
+                <p>Once approved, the loan amount will be transferred directly to your account.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="borrow-online">
+      <h2>Borrow Loan Online</h2>
+  
+      <h3>Looking for a loan?</h3>
+      <p>Get fast and easy loans online, directly to your mobile wallet.</p>
+  
+      <h3>Who We Are?</h3>
+      <p><strong>SwiftLoans</strong> is the best service for online loans in Zambia, directly disbursed to Airtel Money. Unlike other loan services, we offer a simple and quick solution without leaving home in just 15 minutes, with minimal requirements.</p>
+  
+      <h3>Why You Should Borrow from Swifloans?</h3>
+      <ul>
+          <li><strong>Fast Approval:</strong> Get loan approval within minutes.</li>
+          <li><strong>Easy Process:</strong> No paperwork or long queues.</li>
+          <li><strong>Secure Transactions:</strong> Your data is safe and encrypted.</li>
+          <li><strong>Flexible Repayment:</strong> Pay in easy installments.</li>
+      </ul>
+  
+      <h3>Representative Loan Example</h3>
+      <p>> For a loan of K 1,000 at a 6% interest rate, the total repayment amount would be K 1,060.</p>
+     
+  </section>
+  
+    <section class="customer-reviews">
+        <h2>What Our Customers Say</h2>
+        <div class="reviews-slider">
+            <div class="review">
+                <img src="images/customer1.jpg" alt="Customer 1" class="customer-icon">
+                <h3>John Michael</h3>
+                <p class="review-text">"Great service! I got my loan approved within minutes. Highly recommended!"</p>
+                <p class="review-date">April 8, 2025</p>
+            </div>
+            <div class="review">
+                <img src="images/customer2.jpg" alt="Customer 2" class="customer-icon">
+                <h3>Natasha Chongo</h3>
+                <p class="review-text">"The process was so easy, and the rates are very competitive. Thank you!"</p>
+                <p class="review-date">April 30, 2025</p>
+            </div>
+            <div class="review">
+                <img src="images/rev1.jpg" alt="Customer 2" class="customer-icon">
+                <h3>Mercy Rekololang</h3>
+                <p class="review-text">"The loan process was so smooth and hassle-free! I got the funds I needed within 24 hours. Highly recommend!"</p>
+                <p class="review-date">March 29, 2025</p>
+            </div>
+            <div class="review">
+                <img src="images/rev2.jpg" alt="Customer 2" class="customer-icon">
+                <h3>Amantle Wabuya</h3>
+                <p class="review-text">"I was hesitant at first, but the customer service team was incredibly helpful and made everything so easy. Thank you!"</p>
+                <p class="review-date">September 19, 2024</p>
+            </div>
+            <div class="review">
+                <img src="images/rev4.jpg" alt="Customer 2" class="customer-icon">
+                <h3>Keabetswe Stephen</h3>
+                <p class="review-text">"The interest rates were very reasonable, and the repayment terms were flexible. Perfect for my needs!"</p>
+                <p class="review-date">August 24, 2024</p>
+            </div>
+            <div class="review">
+                <img src="images/rev3.jpg" alt="Customer 2" class="customer-icon">
+                <h3>Onneile Nkoshwane</h3>
+                <p class="review-text">"I needed a loan quickly, and this company delivered. The online application took less than 10 minutes!"</p>
+                <p class="review-date">June 14, 2023</p>
+            </div>
+            <div class="review">
+                <img src="images/rev5.jpg" alt="Customer 2" class="customer-icon">
+                <h3>Onalethata David</h3>
+                <p class="review-text">"I’ve never had such a positive experience with a loan before. Everything was transparent, and there were no hidden fees."</p>
+                <p class="review-date">March 19, 2024</p>
+            </div>
+            <!-- Add more reviews here -->
+        </div>
+        <button class="slider-button prev">&#10094;</button>
+        <button id="hey" class="slider-button next">&#10095;</button>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <!-- Phone Call Section -->
+            <div class="footer-item">
+                <i class="fas fa-phone"></i>
+                <div>
+                    <p><strong>Support Service</strong></p>
+                    <p>Phone: +260 773 341 074</p>
+                    <p>Mon-Sun: 8AM - 6PM</p>
+                </div>
+            </div>
+
+            <!-- Mail Section -->
+            <div class="footer-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                    <p><strong>Mail Address</strong></p>
+                    <p>info.swiftloans@gmail.com</p>
+                </div>
+            </div>
+
+            <!-- Clock Section -->
+            <div class="footer-item">
+                <i class="fas fa-clock"></i>
+                <div>
+                    <p><strong>Application Acceptance</strong></p>
+                    <p>24/7</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Horizontal Line -->
+        <div class="separator"></div>
+
+        <!-- Social Icons -->
+        <div class="social-icons">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 MobiLoans. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+    /*    // Service Worker Registration
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then(() => console.log('Service Worker Registered'))
+                .catch((err) => console.error('Service Worker Registration Failed:', err));
+        }
+
+      */  
+    </script>
+</body>
+</html>
