@@ -1,40 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loan Security Fee</title>
-    <link rel="stylesheet" href="servicefee.css">
-    <link rel="stylesheet" href="eligibilitysuccessful.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Secure Your Loan - MobiLoans</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f8f9fa;
+      color: #212529;
+    }
+
+    header {
+      background-color: #008c5f;
+      color: white;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+     
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+    nav a {
+      margin-left: 1.5rem;
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .title {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
 
 
-    <style>
-    
-        /* Navigation Bar Styles */
-        header {
-            background: #00A676;
-            color: #fff;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
+   .steps {
+      background: #e9fce4;
+      border-left: 5px solid #66bb6a;
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 16px;
+    }
 
-        header .logo img {
-            height: 50px;
-            width: 50px;
+    .steps ol {
+      margin-left: 20px;
+      margin-top: 10px;
+    }
+
+    .button-confirm {
+      display: block;
+      width: 100%;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 1rem;
+      font-size: 1.1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+
+    header .logo img {
+            height: 70px;
+            width: 70px;
             border-radius: 50%; /* Make the logo circular */
             padding: 10px 10px;
         }
 
-        nav ul {
+         nav ul {
             list-style: none;
             margin: 0;
             padding: 0;
@@ -42,7 +96,7 @@
         }
 
         nav ul li {
-            margin: 0 15px;
+            margin: 0 5px;
         }
 
         nav ul li a {
@@ -56,171 +110,132 @@
         }
 
 
-        /* Styles for the rotating animation */
-        .loading-container {
-            display: flex;
-            align-items: center;
-            margin-top: 5px;
-            margin-bottom: 5px;
-        }
+    .button-confirm:hover {
+      background-color: #218838;
+    }
 
-        .loading-circle {
-            width: 1.5em;
-            height: 1.5em;
-            aspect-ratio: 1 / 1;
-            border: 4px solid #00A676;
-            border-top: 4px solid transparent;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin-bottom: 10px;
-        }
-     
-        @media (max-width : 600px) {
-            .loading-circle {
-            width: 2em;
-            height: 2em;
-            border-radius: 50%;
-        
-            }
-        }
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-      
-        .loading-text {
-            margin-left: 7px;
-            font-size: 1.2rem;
-            color: #00A676;
-        }
-    
+    .note {
+      margin-top: 1rem;
+      background: #fff3cd;
+      padding: 0.8rem;
+      border-left: 5px solid #ffc107;
+      border-radius: 5px;
+      font-size: 0.95rem;
+    }
 
-        /* Payment Verification Form */
-        .payment-verification {
-            display: none; /* Initially hidden */
-            margin-top: 20px;
-        }
+    .help {
+      margin-top: 1.5rem;
+      text-align: center;
+      font-size: 0.95rem;
+    }
 
-        .payment-verification textarea {
-            width: 100%;
-            height: 100px;
-            padding: 10px;
-            font-size: 1rem;
-            margin-bottom: 10px;
-        }
+    .help a {
+      text-decoration: none;
+      color: #25d366;
+      font-weight: bold;
+    }
+@media (max-width: 600px) {
+  header {
+    width: 100%;              /* Ensure header does not overflow */
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+  }
 
-        .payment-verification button {
-            background: #00A676;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+  nav ul {
+    flex-direction: row;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
 
-        .payment-verification button:hover {
-            background: #00A676;
-        }
+  nav ul li a {
+    font-size: 14px;
+    padding: 5px;
+    white-space: nowrap;      /* Prevent link text from wrapping */
+  }
+}
 
-        /* Error Message */
-        .error-message {
-            color: red;
-            font-weight: bold;
-            margin-top: 10px;
-            display: none; /* Initially hidden */
-        }
-    </style>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5674057642372045"
-    crossorigin="anonymous"></script>
+
+
+  </style>
 </head>
-<body class="servicefee-page">
-    <header>
-        <div class="logo">
-            <img src="images/hww.jpg" alt="Loan Company Logo">
-        </div>
-        <nav>
-            <ul>
-              
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <!-- Notification Section -->
-    <div id="notification" class="notification">
-        <p id="notification-text">+2677453***67 loaned P3662 10 mins ago</p>
+<body>
+  <header>
+    <div class="logo">
+<img src="images/hww.jpg" alt="Loan Company Logo">
     </div>
 
-    <div class="servicefee-container">
-        <!-- Loan Security Fee Box -->
-        <div class="loan-security-fee">
-            <h2>LOAN SECURITY FEE</h2>
-            <p>Based on your selected loan amount of <strong>K<span id="qualified-amount"></span></strong>, MOBILOANS requires you to save a security fee of <strong>K<span id="service-fee"></span></strong> to our <strong>C.E.O</strong> Mrs. PATRICIA CHINYAMA.This is in compliance with the Zambia financial service authorities (ZFSA) regarding credit and savings regulations. Your security fee will be withdrawable exclusively upon successful completion of your first loan repayment cycle.</p>
-            <p><strong>NOTE: Once You Pay The Security Fee,Your Loan will Be Automatically Released.</strong></p>
-        </div>
+    <nav>
 
-        <!-- How to Save Security Fee Box -->
-        <div class="how-to-save-fee">
-            <h3>How to save your security fee:</h3>
-            <div class="loan-details">
-                <li>1. Go to Airtel Menu.</li>
-                <li>2. Choose Send Money</li>
-                <li>3. Enter Phone number: <strong> 0778727583</strong> </li>
-                <li>6. Enter the Amount.</li>
-                <li><strong>C.E.O </strong> Name: <strong>Patricia Chinyama</strong></li>
-              
-            </div>
-        </div>
+   <ul>
+      <li> <a href="about.html">About</a></li>
+      <li> <a href="services.html">Services</a></li>
+      <li> <a href="contact.html">Contact</a></li>
+   </ul>
 
-        <!-- Loading Animation -->
-        <div class="loading-container">
-            <i class="fa fa-spinner fa-spin fa-2x" style="color: green;"></i>
+    </nav>
 
-          <!--  <div class="loading-circle"></div> -->
-            <div class="loading-text">Awaiting Security Fee Payment to Release Your Loan...</div>
-        </div>
+  </header>
 
-        <div class="why text">
-            <p>Once Paid you Can Message Us On WhatsApp by clicking the WhatsApp Icon Below For Any Concern.</p>
-        </div>
+  <main class="container">
+    <h1 class="title">🎯 Secure Your Loan Instantly</h1>
+    <p style="text-align: center; font-size: 1.1rem; margin-bottom: 1rem;">
+      Claim your approved loan of <strong>K<span id="qualified-amount"></span></strong> by paying a one-time security fee of <strong>K<span id="service-fee-top"></span></strong> to our C.E.O.
+    </p>
 
-        
+    <div class="highlight-box">
+        <div class="steps">
+      <strong> How to Pay via Airtel Money:</strong>
+      <ol>
+        <li>Open Airtel Menu</li>
+        <li>Select "Send Money"</li>
+        <li>Enter Phone Number: <strong>0778727583</strong></li>
+        <li>Enter Amount: <strong>K<span id="service-fee-step"></span></strong></li>
+        <li>Confirm Recipient: <strong>Patricia Chinyama</strong> (C.E.O)</li> 
+        <li>Tap Send</li>
+      </ol>
+<div class="note-extra" style="margin-top: 15px;">
+        💡 You can also use your MTN line to send the <strong>K<span id="service-fee-mtn"></span></strong> to the same Airtel number above.
+      </div>
 
-    <script type="module">
+      </div>
+     
+    </div>
+<p style="text-align: center; font-weight: 500; margin: 1rem 0;">
+  ✅ After payment, tap the button below to notify us and receive your loan within 5 minutes.
+</p>
+  <button class="button-confirm" onclick="window.open('https://wa.me/254105157686?text=Hello%2C%20I%20have%20paid%20the%20security%20fee.%20Please%20confirm%20and%20release%20my%20loan.', '_blank')">
+  ✔ I’ve Paid – Confirm Now
+</button>
+
+    <div class="note">
+      💡 Your loan will be released automatically after payment is confirmed.<br>
+      🔐 This fee is refundable after completing your first repayment.
+    </div>
+
+    <div class="help">
+      Need help? <a href="https://wa.me/254105157686" target="_blank">Chat with us on WhatsApp</a>
+    </div>
+  </main>
+
+ <script type="module">
         // Retrieve data from localStorage
         const selectedLoan = JSON.parse(localStorage.getItem('selectedLoan'));
 
         // Display loan details
         if (selectedLoan) {
             document.getElementById('qualified-amount').textContent = selectedLoan.amount || '0';
-            document.getElementById('service-fee').textContent = selectedLoan.fee || '0';
+            document.getElementById('service-fee-top').textContent = selectedLoan.fee || '0';
+            document.getElementById('service-fee-step').textContent = selectedLoan.fee || '0';
+            document.getElementById('service-fee-mtn').textContent = selectedLoan.fee || '0';
         }
     </script>
-   
+
     <script type="module" src="js/firebase.js"></script>
     <script type="module" src="js/servicefee.js"></script>
- 
-    <a href="https://wa.me/254105157686?text=Hello!%20I%20need%20your%20help" 
-    class="whatsapp-float" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
-             alt="WhatsApp" width="50" height="50">
-           
-    </a>
-    
-    <style>
-    .whatsapp-float {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        z-index: 100;
-    }
-    </style>
-    
 
 </body>
 </html>
